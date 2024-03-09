@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  background-color: rgb(173, 156, 156);
+}
