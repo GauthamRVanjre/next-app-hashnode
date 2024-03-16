@@ -1,9 +1,12 @@
-import Image from "next/image";
+import ClientSideFetch from "./components/ClientSideFetch";
+import ServerSideFetch from "./components/ServerSideFetch";
 
 export default function Home() {
   return (
     <>
-      <h1>Hello world</h1>
+      <h1>Fetched Data</h1>
+      {/* <ClientSideFetch /> */}
+      <ServerSideFetch />
     </>
   );
 }
