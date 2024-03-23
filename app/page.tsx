@@ -18,11 +18,11 @@ export default async function Home() {
         >
           <h1>Hello, {data?.firstName}</h1>
           <SignOutButton />
-          <SignedOut>
-            <Link href={"/signin"}>Login here</Link>
-          </SignedOut>
         </div>
       </SignedIn>
+      <SignedOut>
+        <Link href={"/signin"}>Login here</Link>
+      </SignedOut>
     </>
   );
 }
