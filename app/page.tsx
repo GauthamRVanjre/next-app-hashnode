@@ -1,9 +1,28 @@
-import Image from "next/image";
+import { SignOutButton, SignedIn, SignedOut, currentUser } from "@clerk/nextjs";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const data = await currentUser();
+
   return (
     <>
-      <h1>Hello world</h1>
+      <SignedIn>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <h1>Hello, {data?.firstName}</h1>
+          <SignOutButton />
+          <SignedOut>
+            <Link href={"/signin"}>Login here</Link>
+          </SignedOut>
+        </div>
+      </SignedIn>
     </>
   );
 }
